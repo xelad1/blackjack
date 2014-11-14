@@ -1,4 +1,4 @@
-class window.Card extends Backbone.Model
+window.Card = Backbone.Model.extend
   initialize: (params) ->
     @set
       revealed: true

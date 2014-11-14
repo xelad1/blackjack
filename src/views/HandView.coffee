@@ -1,4 +1,4 @@
-class window.HandView extends Backbone.View
+window.HandView = Backbone.View.extend
   className: 'hand'
 
   template: _.template '<h2><% if(isDealer){ %>Dealer<% }else{ %>You<% } %> (<span class="score"></span>)</h2>'

@@ -1,4 +1,4 @@
-class window.AppView extends Backbone.View
+window.AppView = Backbone.View.extend
   template: _.template '
     <button class="hit-button">Hit</button> <button class="stand-button">Stand</button>
     <div class="player-hand-container"></div>

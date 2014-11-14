@@ -1,4 +1,4 @@
-class window.CardView extends Backbone.View
+window.CardView = Backbone.View.extend
   className: 'card'
 
   template: _.template '<%= rankName %> of <%= suitName %>'
