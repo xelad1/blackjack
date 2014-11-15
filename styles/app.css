@@ -1,3 +1,21 @@
+body {
+  background: #5E1919;
+  color: white;
+}
+
+.main {
+  background: url('../img/bg.jpg') no-repeat;
+  background-size: cover;
+  padding: 5%;
+  margin-top: 120px;
+}
+
+img {
+  width: 100px;
+  height: 140px;
+}
+
+
 .card {
   float: left;
   border: solid 1px black;
@@ -7,10 +25,17 @@
   margin-right: 20px;
 }
 
-.covered {
-  background-color: black;
+.hand {
+  overflow: hidden;
+  padding: 3%;
+  margin-left: 20%;
 }
 
-.hand {
-  overflow: auto;
+.button-group {
+  margin-left: 35%;
+}
+
+.btn {
+  border-radius: 300px;
+  margin-left: 2%;
 }

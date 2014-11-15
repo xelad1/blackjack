@@ -1,9 +1,10 @@
 window.AppView = Backbone.View.extend
   template: _.template '
-    <button class="hit-button">Hit</button> <button class="stand-button">Stand</button> <button class="redeal">Redeal</button>
+    <div class="button-group"><button class="hit-button btn btn-primary">Hit</button> <button class="stand-button btn btn-primary">Stand</button> <button class="redeal btn btn-primary">Redeal</button></div>
     <div class="player-hand-container"></div>
     <div class="dealer-hand-container"></div>
   '
+  className: 'board'
 
   events:
     'click .hit-button': ->
@@ -29,6 +30,7 @@ window.AppView = Backbone.View.extend
   render: ->
     @$el.children().detach()
     @$el.html @template()
+    @blackJack()
     @$('.player-hand-container').html new HandView(collection: @model.get 'playerHand').el
     @$('.dealer-hand-container').html new HandView(collection: @model.get 'dealerHand').el
 
@@ -49,3 +51,8 @@ window.AppView = Backbone.View.extend
     @model.set('dealerHand', @model.get('deck').dealDealer())
     @initialize()
     return
+
+  blackJack: ->
+    if @model.get('playerHand').minScore() == 21
+      console.log('DO SOMETHING');
+      return
