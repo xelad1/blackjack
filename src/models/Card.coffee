@@ -1,4 +1,8 @@
 window.Card = Backbone.Model.extend
+  defaults: ->
+    rank: 0
+    suit: ''
+
   initialize: (params) ->
     @set
       revealed: true

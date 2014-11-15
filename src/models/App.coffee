@@ -5,4 +5,5 @@ window.App = Backbone.Model.extend
     @set 'deck', deck = new Deck()
     @set 'playerHand', deck.dealPlayer()
     @set 'dealerHand', deck.dealDealer()
+    return
 

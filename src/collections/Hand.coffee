@@ -4,6 +4,7 @@ window.Hand = Backbone.Collection.extend
   initialize: (array, @deck, @isDealer) ->
 
   hit: ->
+    # Under 21 Logic // If Dealer? Flip
     @add(@deck.pop())
 
   hasAce: -> @reduce (memo, card) ->
@@ -20,7 +21,20 @@ window.Hand = Backbone.Collection.extend
     # when there is an ace, it offers you two scores - the original score, and score + 10.
     [@minScore(), @minScore() + 10 * @hasAce()]
 
+
   stand: ->
-    console.log "stand"
+    # this.isDealer is true, hit until 21
+    @first().flip()
+    return
+
+  # spamHit: ->
+  #   @first().flip()
+  #   @hit() while @minScore() <= 21
+  #   return
+  #   #for loop
+  #   # if this.minScore <= 21
+  #   # hit();
+  #   #break;
+
 
 
