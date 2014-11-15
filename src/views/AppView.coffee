@@ -9,6 +9,10 @@ window.AppView = Backbone.View.extend
     'click .hit-button': ->
       if @model.get('playerHand').minScore() <= 21
         @model.get('playerHand').hit()
+      if @model.get('playerHand').minScore() == 21
+        console.log("Blackjack, you win!")
+      if @model.get('playerHand').minScore() > 21
+        console.log("busto!")
         return
 
     'click .stand-button': ->
@@ -39,4 +43,6 @@ window.AppView = Backbone.View.extend
       @model.get('dealerHand').hit()
       dealerScore = @model.get('dealerHand').minScore()
       @dealerDraw()
+    if dealerScore > 21
+      console.log('You win!!!!')
       return
