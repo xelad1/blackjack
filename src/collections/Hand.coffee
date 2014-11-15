@@ -22,7 +22,7 @@ window.Hand = Backbone.Collection.extend
     [@minScore(), @minScore() + 10 * @hasAce()]
 
 
-  stand: ->
+  flipFirst: ->
     # this.isDealer is true, hit until 21
     @first().flip()
     return
