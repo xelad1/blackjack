@@ -21,10 +21,7 @@ window.AppView = Backbone.View.extend
       return
 
     'click .redeal': ->
-      @model.set('playerHand', @model.get('deck').dealPlayer())
-      @model.set('dealerHand', @model.get('deck').dealDealer())
-      @initialize()
-      return
+      @redeal()
 
   initialize: ->
     @render()
@@ -46,3 +43,9 @@ window.AppView = Backbone.View.extend
     if dealerScore > 21
       console.log('You win!!!!')
       return
+
+  redeal: ->
+    @model.set('playerHand', @model.get('deck').dealPlayer())
+    @model.set('dealerHand', @model.get('deck').dealDealer())
+    @initialize()
+    return
